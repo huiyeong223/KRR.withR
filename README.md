@@ -1,13 +1,11 @@
----
-output: github_document
-title: "README"
----
+README
+================
 
 ## Example: Simulation and Fitting
 
 This is a basic example which shows you how to solve a common problem:
 
-```{r example}
+``` r
 library(KRR.withR)
 
 # 1. Simulate simple regression data
@@ -28,3 +26,5 @@ y_pred = predict(fit, x_test)
 plot(x, y)
 lines(x_test, y_pred, col = "red", lwd = 2)
 ```
+
+![](README_files/figure-gfm/example-1.png)<!-- -->
