@@ -1,0 +1,29 @@
+---
+output: github_document
+---
+
+## Example: Simulation and Fitting
+
+This is a basic example which shows you how to solve a common problem:
+
+```{r example}
+library(KRR.withR)
+
+# 1. Simulate simple regression data
+set.seed(123)
+n = 100
+x = matrix(runif(n, 0, 1), ncol = 1)
+true_y = sin(2 * pi * x[,1])
+y = true_y + rnorm(n, sd = 0.2)
+
+# 2. Fit KRR model
+fit = krr(x, y, rho = 10, lambda = 0.01)
+
+# 3. Predict on new data
+x_test = matrix(seq(0, 1, length.out = 100), ncol = 1)
+y_pred = predict(fit, x_test)
+
+# 4. Visualization
+plot(x, y)
+lines(x_test, y_pred, col = "red", lwd = 2)
+```
